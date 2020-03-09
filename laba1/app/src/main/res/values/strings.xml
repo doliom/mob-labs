@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">laba1</string>
+    <string-array name="tablewarelist">
+        <item>Тарілка</item>
+        <item>Кастрюля</item>
+        <item>Пательня</item>
+        <item>Ніж</item>
+    </string-array>
+</resources>
