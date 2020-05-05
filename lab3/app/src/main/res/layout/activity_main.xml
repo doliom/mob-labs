@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DFE6F3"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Виберіть тип посуду:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <Spinner
+        android:id="@+id/check_tableware"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:entries="@array/tablewarelist" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Виберіть виробника:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <CheckBox
+        android:id="@+id/check_lembik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lembik" />
+
+    <CheckBox
+        android:id="@+id/check_luminarc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Luminarc" />
+
+    <CheckBox
+        android:id="@+id/check_ceramic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Souful Ceramic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Виберіть діапазон цін:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <CheckBox
+        android:id="@+id/check_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 - 500" />
+
+    <CheckBox
+        android:id="@+id/check_500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500 - 1000" />
+
+    <CheckBox
+        android:id="@+id/check_1000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1000 - ..." />
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="OK"/>
+
+    <Button
+        android:id="@+id/open_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Відкрити"/>
+
+</LinearLayout>
