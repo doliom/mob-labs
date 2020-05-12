@@ -34,9 +34,10 @@ class ResultActivity : AppCompatActivity() {
 
         while({text = bufferedReader.readLine(); text} () != null) {
             stringBuilder.append(text)
+            stringBuilder.append("\n\n")
         }
 
-        textresult.setText(stringBuilder.toString()).toString()
+        textresult.setText(stringBuilder.toString())
 
     }
 

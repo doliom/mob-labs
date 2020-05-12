@@ -14,7 +14,7 @@ class FragmentSecond : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // визначення макета для фрагмента
         return inflater.inflate(R.layout.fragment_second, container, false)
     }
 

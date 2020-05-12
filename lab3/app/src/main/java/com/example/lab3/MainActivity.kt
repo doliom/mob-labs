@@ -13,7 +13,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
 import java.lang.Exception
 import java.time.Duration
+import java.io.File
 import android.content.Intent
+import kotlinx.android.synthetic.main.activity_result.*
+import java.lang.StringBuilder
 
 
 class MainActivity : AppCompatActivity() {
@@ -38,10 +41,10 @@ class MainActivity : AppCompatActivity() {
                 dishes += "Вид посуду: ${check_tableware?.selectedItem.toString()}"
                 producer += "Виробник:  "
                 if (check_lembik.isChecked) {
-                    producer += "Lembic "
+                    producer += "Lembic, "
                 }
                 if (check_luminarc.isChecked) {
-                    producer += "Lumiranc "
+                    producer += "Lumiranc, "
                 }
                 if (check_ceramic.isChecked) {
                     producer += "Souful Cearmic "
@@ -49,10 +52,10 @@ class MainActivity : AppCompatActivity() {
 
                 cost += "Діапазон цін:  "
                 if (check_0.isChecked) {
-                    cost += "0 - 500   "
+                    cost += "0 - 500,   "
                 }
                 if (check_500.isChecked) {
-                    cost += "500 - 1000   "
+                    cost += "500 - 1000,  "
                 }
                 if (check_1000.isChecked) {
                     cost += "1000 - ...  "
@@ -73,12 +76,18 @@ class MainActivity : AppCompatActivity() {
 
     fun writeInFile(dishes: String, producer: String, cost: String){
         val file = getString(R.string.filename)
+        val stringBuilder: StringBuilder = StringBuilder()
         val fileOutputStream: FileOutputStream
+        val result: String
+        stringBuilder.append(dishes).append("\n" ).append(producer).append("\n" ).append(cost).append("\n" )
+        result = stringBuilder.toString()
         try{
-            fileOutputStream = openFileOutput(file, Context.MODE_PRIVATE)
-            fileOutputStream.write(dishes.toByteArray())
-            fileOutputStream.write(producer.toByteArray())
-            fileOutputStream.write(cost.toByteArray())
+//            FileOutputStream("lab3.txt", true).use { output ->
+//                output.write(result.toByteArray())
+//            }
+            fileOutputStream = openFileOutput(file, Context.MODE_APPEND)
+            fileOutputStream.write(result.toByteArray())
+            fileOutputStream.close()
         }
         catch (e: FileNotFoundException){
             e.printStackTrace()
@@ -88,6 +97,7 @@ class MainActivity : AppCompatActivity() {
         }
         showToast("Saved successful")
     }
+
 
     fun Context.showToast(text: CharSequence, duration: Int = Toast.LENGTH_SHORT){
         Toast.makeText(this, text, duration).show()

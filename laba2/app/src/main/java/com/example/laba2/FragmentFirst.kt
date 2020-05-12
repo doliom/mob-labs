@@ -14,7 +14,7 @@ interface OnFragmentInteractionListener {
 }
 
 class FragmentFirst : Fragment() {
-    private var listener: OnFragmentInteractionListener? = null
+    var listener: OnFragmentInteractionListener? = null
 
 
     override fun onCreateView(
